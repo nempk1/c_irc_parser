@@ -57,7 +57,7 @@ int tag_parse(struct tag_list* tags, char *buffer)
 
 		counter++;
 
-	}while(tags->size < tag_count &&
+	}while(counter < tags->size &&
 			buffer != NULL);	
 	return 0;
 }
