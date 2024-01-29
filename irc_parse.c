@@ -115,7 +115,7 @@ int param_parse(struct param *prm, char *buffer)
 		tmp[count2] = strsep(&p, " ");
 		count2++;	
 	}
-	tmp[count2] = NULL;
+	tmp[count2-1] = NULL;
 
 	if(!buffer) {
 		prm->last = tmp[count2-1];
