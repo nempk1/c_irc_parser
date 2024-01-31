@@ -31,7 +31,7 @@ struct param {
 	char *last;
 };
 
-struct message {
+struct irc_msg {
 	struct tag_list  tlist;
 	struct source 	 source;
 	struct param  	 param;
@@ -70,13 +70,19 @@ extern int param_parse(struct param *, char *);
 extern char *
 search_tag_name(const char *, struct tag_list *);
 
-extern struct message *
-message_alloc(char *);
+extern struct irc_msg *
+irc_msg_alloc(void);
 
 extern void
-message_free(struct message *);
+irc_msg_free(struct irc_msg *);
 
-extern struct message *
+extern struct irc_msg *
 irc_parse_message(char *);
 
+extern int
+irc_parse(struct irc_msg *,char *);
+
+extern char *_rtrim(char *);
+extern char *_ltrim(char *);
+extern char *_trim(char *);
 #endif
